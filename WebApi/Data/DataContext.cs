@@ -1,4 +1,5 @@
 global using Microsoft.EntityFrameworkCore;
+
 namespace WebApi.Data
 {
     public class DataContext : DbContext
@@ -8,10 +9,9 @@ namespace WebApi.Data
 
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("");
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Movie> Movies {get; set; }

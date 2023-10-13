@@ -13,7 +13,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IMovieService, MovieService>();
-builder.Services.AddDbContext<DataContext>();
+builder.Services.AddDbContext<DataContext>(
+    o => o.UseNpgsql(builder.Configuration.GetConnectionString("DotnetTask"))
+);
 
 var app = builder.Build();
 
