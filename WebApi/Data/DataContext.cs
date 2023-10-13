@@ -15,5 +15,6 @@ namespace WebApi.Data
         }
 
         public DbSet<Movie> Movies {get; set; }
+        public DbSet<Cinema> Cinemas {get; set; }
     }
 }
