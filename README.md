@@ -48,7 +48,7 @@ This guide will walk you through the process of setting up a .NET project, creat
 # Movie Endpoints
     ** Get /api/Movie: To fetch all Movies
     ** Post /api/Movie: To Create Movie 
-    ** Get /api/Movie/{id}: To search movie by Id
+    ** Get /api/Movie/{search}: To search movie by name
     ** Put /api/Movie/{id}: To update Movie
     ** Delete /api/Movie/{id}: To delete Movie
 

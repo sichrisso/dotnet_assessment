@@ -20,16 +20,17 @@ namespace WebApi.Controllers
            return _movieService.GetAllMovies();
         }
 
-        [HttpGet("{id}")]
-         public async Task<ActionResult<Movie>> SearchMovie(int id)
+       [HttpGet("search")]
+        public async Task<ActionResult<Movie>> SearchMovieByName([FromQuery] string name)
         {
-             var result = _movieService.SearchMovie(id);
+            var result = _movieService.SearchMovieByName(name);
+
             if (result is null)
             {
                 return NotFound("Unable to find");
             }
+
             return Ok(result);
-         
         }
 
         [HttpPost]

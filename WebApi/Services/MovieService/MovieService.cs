@@ -34,16 +34,15 @@ namespace WebApi.Services.MovieService
              return movies;
         }
 
-        public Movie? SearchMovie(int id)
+        public Movie? SearchMovieByName(string name)
         {
-               var movie = movies.Find(x => x.Id == id);
+            var movie = movies.Find(x => x.Title == name); // Change to Title for name search
             if (movie is null)
             {
                 return null;
             }
             return movie;
         }
-
         public List<Movie>? UpdateMovie(int id, Movie request)
         {
              var movie = movies.Find(x => x.Id == id);
